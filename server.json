@@ -1,0 +1,20 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.gorlix/pallino-mcp",
+  "title": "Pallino",
+  "description": "MCP server for Pallino Cloud: spaces, projects, notes and tasks via the agent API.",
+  "repository": { "url": "https://github.com/gorlix/pallino-mcp", "source": "github" },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "pallino-mcp",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        { "name": "PALLINO_API_KEY", "description": "Pallino API key (pallino_...), with only the grants you want to give the agent.", "isRequired": true, "isSecret": true },
+        { "name": "PALLINO_TIMEZONE", "description": "IANA time zone used to compute today's date (e.g. Europe/Rome). Defaults to TZ or the server zone.", "isRequired": false }
+      ]
+    }
+  ]
+}

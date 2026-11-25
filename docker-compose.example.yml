@@ -1,0 +1,11 @@
+services:
+  pallino-mcp:
+    image: ghcr.io/gorlix/pallino-mcp:latest
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000" # put a reverse proxy with HTTPS in front
+    environment:
+      OAUTH_SECRET: "change-me-to-a-random-string-of-32-or-more-characters"
+      PUBLIC_URL: "https://mcp.example.com"
+      TRUST_PROXY: "1"
+      PALLINO_TIMEZONE: "Europe/Rome"
