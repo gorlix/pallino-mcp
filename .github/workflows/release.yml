@@ -19,15 +19,13 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
-      # Trusted publishing (OIDC) needs npm >= 11.5; NPM_TOKEN stays as fallback.
+      # Trusted publishing (OIDC, configured on npmjs.com) needs npm >= 11.5; no token.
       - run: npm install -g npm@latest
       - name: Publish (skipped if this version is already on npm)
         run: |
           V=$(node -p "require('./package.json').version")
           if npm view "pallino-mcp@$V" version >/dev/null 2>&1; then echo "pallino-mcp@$V already published"; exit 0; fi
           npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   docker:
     needs: npm
     runs-on: ubuntu-latest
