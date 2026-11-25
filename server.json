@@ -4,12 +4,12 @@
   "title": "Pallino",
   "description": "MCP server for Pallino Cloud: spaces, projects, notes and tasks via the agent API.",
   "repository": { "url": "https://github.com/gorlix/pallino-mcp", "source": "github" },
-  "version": "0.1.1",
+  "version": "0.2.0",
   "packages": [
     {
       "registryType": "npm",
-      "identifier": "pallino-mcp",
-      "version": "0.1.1",
+      "identifier": "@pallino/mcp",
+      "version": "0.2.0",
       "transport": { "type": "stdio" },
       "environmentVariables": [
         { "name": "PALLINO_API_KEY", "description": "Pallino API key (pallino_...), with only the grants you want to give the agent.", "isRequired": true, "isSecret": true },

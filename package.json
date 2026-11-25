@@ -1,6 +1,6 @@
 {
-  "name": "pallino-mcp",
-  "version": "0.1.1",
+  "name": "@pallino/mcp",
+  "version": "0.2.0",
   "description": "MCP server for Pallino Cloud: spaces, projects, notes and tasks via the agent API. stdio, Streamable HTTP and OAuth.",
   "type": "module",
   "license": "MIT",

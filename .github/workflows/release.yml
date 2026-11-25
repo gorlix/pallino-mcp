@@ -23,8 +23,8 @@ jobs:
       - run: npm install -g npm@latest
       - name: Publish (skipped if this version is already on npm)
         run: |
-          V=$(node -p "require('./package.json').version")
-          if npm view "pallino-mcp@$V" version >/dev/null 2>&1; then echo "pallino-mcp@$V already published"; exit 0; fi
+          P=$(node -p "require('./package.json').name + '@' + require('./package.json').version")
+          if npm view "$P" version >/dev/null 2>&1; then echo "$P already published"; exit 0; fi
           npm publish --provenance --access public
   docker:
     needs: npm
