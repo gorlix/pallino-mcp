@@ -37,7 +37,7 @@ It also exposes the resource `pallino://capabilities` (server limits and support
 Claude Code:
 
 ```sh
-claude mcp add pallino -e PALLINO_API_KEY=pallino_xxx -- npx -y @pallino/mcp
+claude mcp add pallino -e PALLINO_API_KEY=pallino_xxx -- npx -y @pallino.me/mcp
 ```
 
 Claude Desktop (`claude_desktop_config.json`), Cursor and most other clients:
@@ -47,7 +47,7 @@ Claude Desktop (`claude_desktop_config.json`), Cursor and most other clients:
   "mcpServers": {
     "pallino": {
       "command": "npx",
-      "args": ["-y", "@pallino/mcp"],
+      "args": ["-y", "@pallino.me/mcp"],
       "env": { "PALLINO_API_KEY": "pallino_xxx", "PALLINO_TIMEZONE": "Europe/Rome" }
     }
   }
@@ -68,7 +68,7 @@ docker run -d -p 3000:3000 \
 
 Generate `OAUTH_SECRET` once and keep it stable: a new value logs every connected client out.
 
-Or use [`docker-compose.example.yml`](docker-compose.example.yml). Without Docker: `npx -y @pallino/mcp --transport http --port 3000`.
+Or use [`docker-compose.example.yml`](docker-compose.example.yml). Without Docker: `npx -y @pallino.me/mcp --transport http --port 3000`.
 
 Put a reverse proxy with HTTPS in front. OAuth clients require HTTPS, and `PUBLIC_URL` must be the exact public origin.
 
