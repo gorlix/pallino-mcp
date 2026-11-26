@@ -56,6 +56,17 @@ Claude Desktop (`claude_desktop_config.json`), Cursor and most other clients:
 
 Set `PALLINO_TIMEZONE` (IANA name) so "today" is computed in your zone; it falls back to `TZ`, then the server zone.
 
+### Agent skill
+
+[`skills/pallino/SKILL.md`](skills/pallino/SKILL.md) teaches an agent how to use these tools well: orient first, read freely, write only after the user's OK, use `revision`, rewrite note bodies whole, map "every Monday" or "by Friday" to the right fields, format summaries. For Claude Code:
+
+```sh
+mkdir -p ~/.claude/skills/pallino
+curl -fsSL https://raw.githubusercontent.com/gorlix/pallino-mcp/main/skills/pallino/SKILL.md -o ~/.claude/skills/pallino/SKILL.md
+```
+
+For claude.ai, zip the `skills/pallino` folder and upload it under Settings → Capabilities → Skills. Add your own default space, membership id and project ids at the end of the file to skip lookups.
+
 ## Remote / self-host
 
 ```sh
